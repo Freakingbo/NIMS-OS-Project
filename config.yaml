@@ -1,0 +1,86 @@
+watch_paths:
+
+"."
+"./test_folder"
+
+exclude_patterns:
+
+"*.tmp"
+
+"*.swp"
+
+"*.pyc"
+
+"pycache"
+
+".git"
+
+"*.db"
+
+"*.db-wal"
+
+"*.db-shm"
+
+"*.db-journal"
+
+"fim_events.jsonl*"
+
+"fim_report.*"
+
+hash_algorithm: "sha256"
+database_path: "fim_baseline.db"
+debounce_seconds: 1.0
+
+severity_rules:
+high_paths:
+- "/etc"
+- "/bin"
+- "/sbin"
+- "/usr/bin"
+- "/usr/sbin"
+- "C:/Windows/System32"
+- "C:/Program Files"
+high_extensions:
+- ".exe"
+- ".dll"
+- ".sh"
+- ".bin"
+- ".so"
+- ".sys"
+- ".bat"
+- ".ps1"
+medium_extensions:
+- ".yaml"
+- ".yml"
+- ".json"
+- ".conf"
+- ".cfg"
+- ".ini"
+- ".env"
+- ".toml"
+- ".xml"
+low_extensions:
+- ".txt"
+- ".md"
+- ".pdf"
+- ".doc"
+- ".docx"
+- ".csv"
+- ".log"
+
+alerts:
+console: true
+log_file: "fim_events.jsonl"
+log_max_bytes: 5242880
+log_backup_count: 5
+email:
+enabled: false
+smtp_host: "smtp.example.local"
+smtp_port: 587
+use_tls: true
+username: ""
+password: ""
+from_addr: "fim-alerts@example.local"
+to_addrs:
+- "soc@example.local"
+min_severity: "HIGH"

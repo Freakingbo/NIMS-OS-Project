@@ -1,0 +1,14 @@
+pycache/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+*.db
+*.db-wal
+*.db-shm
+.db-journal
+fim_events.jsonl
+fim_report.csv
+fim_report.html
